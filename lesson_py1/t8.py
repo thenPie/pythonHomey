@@ -44,16 +44,17 @@ elif chu_orig == chunk_amt1:
     checker = True
 
 # разлом по горизонтали
-chunk_amt2 -= hor # разлом тут
-if chu_orig != chunk_amt2:
-    ver_side = 1
-    while ver_side < ver:
-        if chu_orig == chunk_amt2:
-            checker = True
-        chunk_amt2 -= hor
-        ver_side += 1
-elif chu_orig == chunk_amt2:
-    checker = True
+if checker == False:
+    chunk_amt2 -= hor # разлом тут
+    if chu_orig != chunk_amt2:
+        ver_side = 1
+        while ver_side < ver:
+            if chu_orig == chunk_amt2:
+                checker = True
+            chunk_amt2 -= hor
+            ver_side += 1
+    elif chu_orig == chunk_amt2:
+        checker = True
 
 if checker == True:
     print("yes, possible")
